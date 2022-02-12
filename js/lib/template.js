@@ -1,4 +1,6 @@
-
+// Template replacement.
+// Copyright 2022 Stephen D. Williams sdw@lig.net
+// Improving on @Daniel: https://stackoverflow.com/questions/39584241/es6-string-interpolation-from-file-content/68513787#68513787
 
 var obj = {a: 'one', b:{b1:"Bravo-1",b2:'Bravo-2'},c:{c1:{c2:"Charlie-2"}}};
 var templ = '${ a}, ${b.b1 }, ${b.b2}, ${c.c1.c2}';
@@ -49,8 +51,8 @@ const replaceTest = function (file, obj) {
         console.log(content);
         fs.writeFile('test.tf', content, err => {
             if (err) {
-                console.error(err)
-                return
+                console.error(err);
+                return;
             }
             //file written successfully
         });
